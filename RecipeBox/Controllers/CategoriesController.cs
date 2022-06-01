@@ -4,7 +4,7 @@ using RecipeBox.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RecipeBox.Conttrollers
+namespace RecipeBox.Controllers
 {
   public class CategoriesController:Controller
   {

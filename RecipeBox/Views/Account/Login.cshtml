@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+@using RecipeBox.ViewModels
+@model LoginViewModel
+
+<h2>Login in to your Account</h2>
+
+@* @if(@ViewBag.num == 1) *@
+@* { *@
+  @using (Html.BeginForm())
+  {
+  @Html.LabelFor(model=>model.Email)
+  @Html.TextBoxFor(model=>model.Email)
+
+  @Html.LabelFor(model=>model.Password)
+  @Html.PasswordFor(model=>model.Password)
+
+  <input  type ="Submit" value ="Log in"/>
+  }
+
+@* } *@
+@* else if(@ViewBag.num ==2)
+{
+  <h2> @ViewBag.ErrorMessage</h2>
+} *@
+
+
+

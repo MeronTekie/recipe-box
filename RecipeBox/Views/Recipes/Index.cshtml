@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+<h1>HI Weclome</h1>
+
+@* @using RecipeBox.Models
+
+@if (Model.Any())
+{
+    <ul>
+    <h4>Recipes Catalogue</h4>
+        @foreach (Recipe recipe in Model)
+        {
+          <li>
+              @Html.ActionLink($"{recipe.DishName}", "Details", new { id = recipe.RecipeId})
+          </li>
+        }
+
+</ul>
+}
+else
+{
+<h2> Sorry no added Recipes yet!</h2>
+
+} *@

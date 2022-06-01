@@ -13,7 +13,7 @@ namespace RecipeBox
         .UseIISIntegration()
         .UseStartup<Startup>()
         .Build();
-      host.Run();
+        host.Run();
     }
   }
 }

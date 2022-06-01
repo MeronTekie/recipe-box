@@ -1,6 +1,5 @@
 @{
   Layout ="_Layout";
-
 }
 
 <h1>Welcome to this Page You can Add  a category</h1>
@@ -8,7 +7,7 @@
 @model RecipeBox.Models.Category
 
 
-@using ( Html.BeginForm())
+@using (Html.BeginForm())
 {
 
   @Html.LabelFor(model=>model.Name)
@@ -16,4 +15,3 @@
   
   <input type ="Submit" value="Add a category"/>
 }
-<h4>@Html.ActionLink("List of Categories","Index")</h4>

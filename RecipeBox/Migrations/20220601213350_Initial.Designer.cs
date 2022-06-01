@@ -11,8 +11,8 @@ using RecipeBox.Models;
 namespace RecipeBox.Migrations
 {
     [DbContext(typeof(RecipeBoxContext))]
-    [Migration("20220601163110_addIdentity")]
-    partial class addIdentity
+    [Migration("20220601213350_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -248,7 +248,12 @@ namespace RecipeBox.Migrations
                     b.Property<string>("Origin")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
                     b.HasKey("RecipeId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Recipes");
                 });
@@ -323,6 +328,15 @@ namespace RecipeBox.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("RecipeBox.Models.Recipe", b =>
+                {
+                    b.HasOne("RecipeBox.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("RecipeBox.Models.RecipeCategory", b =>

@@ -1,0 +1,16 @@
+@{
+  Layout ="_Layout";
+}
+@model RecipeBox.Models.Recipe
+<h2>Edit</h2>
+<h4>Edit this category: @Html.DisplayFor(model=>model.DishName)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model=>model.RecipeId)
+
+  @Html.LabelFor(model=>model.DishName)
+  @Html.EditorFor(model=>model.DishName)
+
+  <input type ="Submit"  value="Save"/>
+}
